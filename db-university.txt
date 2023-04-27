@@ -1,0 +1,40 @@
+/* esercizio 1 ------------------------------------------*/
+SELECT *
+FROM `students`
+WHERE YEAR( `date_of_birth`) = '1990';
+
+/* esercizio 2 ------------------------------------------*/
+SELECT * 
+FROM `courses`
+WHERE `cfu` > 10;
+
+/* esercizio 3 ------------------------------------------*/
+SELECT *
+FROM `students`
+WHERE DATE_SUB(CURRENT_DATE(), INTERVAL 30 YEAR) > `date_of_birth`;
+
+/* esercizio 4 ------------------------------------------*/
+SELECT * 
+FROM `courses`
+WHERE `period` = 'I semestre'
+AND `year` = 1;
+
+/* esercizio 5 ------------------------------------------*/
+SELECT * 
+FROM `exams`
+WHERE `date` = '2020-06-20'
+AND `hour` > '14:00:00';
+
+/* esercizio 6 ------------------------------------------*/
+SELECT *
+FROM `degrees`
+WHERE `level` = 'magistrale';
+
+/* esercizio 7 ------------------------------------------*/
+SELECT COUNT(`id`) AS num_dipartimenti
+FROM `departments`;
+
+/* esercizio 8 ------------------------------------------*/
+SELECT COUNT(`id`) AS teachers_without_phone
+FROM `teachers`
+WHERE `phone` IS NULL;
