@@ -56,8 +56,7 @@ ORDER BY `degrees`.`name` ASC;
 
 /*es 6 ---------------------------------------------------------------------------------*/
 /* selezionare tutti i docenti che insegnano nel dipartimento di matematica */
-SELECT `teachers`.`name` AS `teacher_name`, `teachers`.`surname` AS `teacher_surname`, `courses`.`name` AS `course_name`, `degrees`.`name` AS `degree_name`,
-`departments`.`name` AS `department_name`
+SELECT  `teachers`.`name` AS `teacher_name`, `teachers`.`surname` AS `teacher_surname`, `courses`.`name` AS `course_name`, `degrees`.`name` AS `degree_name`, `departments`.`name` AS `department_name`
 FROM `teachers`
 
 INNER JOIN `course_teacher`
@@ -72,7 +71,8 @@ ON `courses`.`degree_id` = `degrees`.`id`
 INNER JOIN `departments`
 ON `degrees`.`department_id` = `departments`.`id`
 
-WHERE `departments`.`id` = 5;
+WHERE `departments`.`id` = 5
+GROUP BY `teachers`.`id`;
 
 
 /*es 7 bonus ---------------------------------------------------------------------------*/
